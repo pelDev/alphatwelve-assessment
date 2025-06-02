@@ -48,8 +48,6 @@ A scalable and modular **Flutter E-Commerce application**. The app demonstrates 
 
 ## 📸 Screenshots
 
-> Make sure to place your screenshots in the `/screenshots/` folder and update the paths if needed.
-
 | Product List | Product Detail | Cart |
 |--------------|----------------|------|
 | ![List](screenshots/product_list.png) | ![Detail](screenshots/product_detail.png) | ![Cart](screenshots/cart.png) |
