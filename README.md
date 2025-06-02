@@ -1,6 +1,6 @@
 # 🛍️ Flutter E-Commerce App
 
-A scalable and modular **Flutter E-Commerce application** built as part of a job assessment. The app demonstrates a clean architecture approach with separate layers for data, domain, and presentation. It supports product browsing and full cart functionality with clean and testable code.
+A scalable and modular **Flutter E-Commerce application**. The app demonstrates a clean architecture approach with separate layers for data, domain, and presentation. It supports product browsing and full cart functionality with clean and testable code.
 
 ---
 
