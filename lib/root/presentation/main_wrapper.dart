@@ -27,6 +27,9 @@ class _MainWrapperState extends State<MainWrapper> {
   void initState() {
     super.initState();
     _pageController = PageController();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      context.read<CartProvider>().loadCartItems();
+    });
   }
 
   @override

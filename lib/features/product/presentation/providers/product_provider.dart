@@ -29,7 +29,8 @@ class ProductProvider with ChangeNotifier {
   String? get error => _error;
   CategoryEntity get selectedCategory => _category;
 
-  Future<void> fetchProducts() async {
+  Future<void> fetchProducts({bool refresh = false}) async {
+    if (refresh) _products = [];
     _isLoading = true;
     notifyListeners();
 

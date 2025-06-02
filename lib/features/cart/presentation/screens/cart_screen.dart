@@ -88,9 +88,7 @@ class _CartScreenState extends State<CartScreen> {
                     color: AppColor.backgroundLight,
                     padding: const EdgeInsets.only(top: 16, bottom: 16),
                     child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
+                      onPressed: () {},
                       child: Text(
                           "Checkout ${cartProvider.totalAmount.toString()}"),
                     ),

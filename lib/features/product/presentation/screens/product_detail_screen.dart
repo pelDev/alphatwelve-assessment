@@ -60,14 +60,18 @@ class ProductDetailScreen extends StatelessWidget {
                             Positioned(
                               top: 16,
                               right: 16,
-                              child: IconButton(
-                                onPressed: () {},
-                                style: const ButtonStyle(
-                                  backgroundColor:
-                                      WidgetStatePropertyAll(Colors.white),
-                                ),
-                                icon: const Icon(
-                                  Icons.favorite_outline,
+                              child: AnimatedOpacity(
+                                opacity: 1,
+                                duration: const Duration(milliseconds: 300),
+                                child: IconButton(
+                                  onPressed: () {},
+                                  style: const ButtonStyle(
+                                    backgroundColor:
+                                        WidgetStatePropertyAll(Colors.white),
+                                  ),
+                                  icon: const Icon(
+                                    Icons.favorite_outline,
+                                  ),
                                 ),
                               ),
                             )

@@ -28,7 +28,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
       body: Consumer<ProductProvider>(
         builder: (context, provider, child) {
           return RefreshIndicator(
-            onRefresh: () => provider.fetchProducts(),
+            onRefresh: () => provider.fetchProducts(refresh: true),
             child: CustomScrollView(
               slivers: [
                 if (provider.error != null && !provider.isLoading)
@@ -58,16 +58,23 @@ class _ProductListScreenState extends State<ProductListScreen> {
                     sliver: SliverGrid(
                       delegate: SliverChildBuilderDelegate(
                         (_, index) {
+                          if (index >= provider.products.length) {
+                            return const ProductListItemSkeleton();
+                          }
+
                           final product = provider.products[index];
 
                           return ProductListItem(
                             product: product,
                             onTap: () => _navigateToDetails(context, product),
+                            key: PageStorageKey(product.id),
                           );
                         },
                         addAutomaticKeepAlives: false,
                         addRepaintBoundaries: true,
-                        childCount: provider.products.length,
+                        childCount: provider.isLoading
+                            ? provider.products.length + 4
+                            : provider.products.length,
                       ),
                       gridDelegate:
                           const SliverGridDelegateWithFixedCrossAxisCount(
